@@ -1,0 +1,126 @@
+Funciones de los archivos del juego:
+
+cargar_preguntas: Carga las preguntas guardadas en el json, admitiendo caracteres especiales con el "encoding= "utf-8" ". Y guarda las preguntas en una variable y las retorna
+
+
+1️⃣ guardar_preguntas_json
+¿Qué hace?
+Guarda las preguntas en un archivo JSON.
+
+¿Cómo funciona?
+
+Recibe una lista de preguntas y un nombre de archivo (opcional).
+Escribe las preguntas en formato JSON en el archivo.
+Si hay un error, muestra un mensaje de error.
+JSON.DUMP HACE QUE PUEDAS GUARDAR UN OBJETO COMO UNA LISTA O DICT, EL ENSURE_ASCII HACE QUE SE ESCRIBA O NO LOS CARACTERES ESPECIALES EN EL FORMATO ASCII.
+
+2️⃣ manejar_string
+¿Qué hace?
+Formatea una cadena de texto (nombre del usuario).
+
+¿Cómo funciona?
+
+Convierte la primera letra en mayúscula.
+Reemplaza los espacios por guiones bajos _.
+
+seleccionar_categoria
+¿Qué hace?
+Elige una categoría al azar de una lista.
+
+¿Cómo funciona?
+
+Recibe una lista de categorías.
+Usa random.choice() para seleccionar una.
+4️⃣ seleccionar_pregunta
+¿Qué hace?
+Elige una pregunta al azar de una categoría.
+
+¿Cómo funciona?
+
+Recibe una lista de preguntas.
+Si la lista está vacía, muestra un error.
+Usa random.choice() para elegir una pregunta.
+5️⃣ guardar_ranking
+¿Qué hace?
+Guarda el puntaje de un jugador en un archivo CSV.
+
+¿Cómo funciona?
+
+Registra el nombre, la puntuación y la fecha/hora actual.
+Si hay un tiempo de partida, también lo guarda.
+Escribe los datos en el archivo CSV.
+
+Explicación de 'a', newline='' en open()
+Cuando abres un archivo en Python con open(file_path, 'a', newline=''), cada parámetro tiene una función específica:
+
+'a' (Append - Agregar)
+Indica que el archivo se abre en modo de agregado.
+En lugar de sobrescribir el contenido, añade nuevos datos al final del archivo.
+Si el archivo no existe, lo crea automáticamente.
+newline=''
+Se usa principalmente al escribir archivos CSV.
+Evita que se agreguen líneas en blanco extra entre cada fila en Windows.
+En sistemas como Linux o macOS no es obligatorio, pero en Windows ayuda a que los archivos CSV se vean correctamente.
+
+6️⃣ crear_botones
+¿Qué hace?
+Crea botones en la pantalla con pygame.
+
+¿Cómo funciona?
+
+Recibe la pantalla, colores, texto y acciones del botón.
+Dibuja los botones y detecta si el usuario hace clic.
+Puede mostrar opciones de respuestas en botones.
+La función zip() combina elementos de dos o más iterables (como listas o tuplas) en pares, formando tuplas con los elementos correspondientes de cada iterable.
+
+7️⃣ actualizar_estadisticas_preguntas
+¿Qué hace?
+Guarda cuántas veces se ha preguntado algo y si las respuestas fueron correctas o incorrectas.
+
+¿Cómo funciona?
+
+Si la pregunta no existe en el registro, la agrega.
+Aumenta el contador de preguntas hechas.
+Si el usuario respondió bien, suma 1 a "correctas"; si no, a "incorrectas".
+8️⃣ guardar_estadisticas_preguntas_realizadas_csv
+¿Qué hace?
+Guarda las estadísticas de las preguntas en un archivo CSV.
+
+¿Cómo funciona?
+
+Escribe cuántas veces se hizo cada pregunta y el porcentaje de aciertos.
+
+gregar_preguntas
+¿Qué hace?
+Permite agregar nuevas preguntas a través de una interfaz gráfica.
+
+¿Cómo funciona?
+
+Usa pygame para mostrar una pantalla con cajas de texto.
+El usuario ingresa la pregunta, las opciones y la respuesta correcta.
+Guarda la pregunta en un archivo JSON.
+🔟 mostrar_input
+¿Qué hace?
+Dibuja un campo de texto en la pantalla.
+
+¿Cómo funciona?
+
+Muestra un rectángulo y escribe el texto dentro.
+Si está activo (seleccionado), cambia de color.
+1️⃣1️⃣ menu_configuracion
+¿Qué hace?
+Muestra un menú para configurar vidas, puntuación y tiempo del juego.
+
+¿Cómo funciona?
+
+Usa pygame_menu para mostrar opciones.
+Permite cambiar valores y guardarlos sin modificar archivos.
+1️⃣2️⃣ obtener_top_10
+¿Qué hace?
+Obtiene los 10 mejores puntajes del ranking.
+
+¿Cómo funciona?
+
+Lee el archivo CSV donde están las puntuaciones.
+Ordena los datos de mayor a menor puntuación.
+Retorna los 10 mejores jugadores.
