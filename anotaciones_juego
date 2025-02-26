@@ -89,6 +89,19 @@ Guarda las estadísticas de las preguntas en un archivo CSV.
 ¿Cómo funciona?
 
 Escribe cuántas veces se hizo cada pregunta y el porcentaje de aciertos.
+csv.DictWriter(file, fieldnames=campos)
+
+Crea un escritor de CSV que trabaja con diccionarios.
+El parámetro fieldnames define el orden de las columnas.
+writer.writeheader()
+
+Escribe la fila de encabezados con los nombres de las columnas.
+writer.writerow({...})
+
+Escribe una fila de datos usando un diccionario, donde las claves deben coincidir con los nombres de las columnas.
+with open(..., newline='') as file
+
+El newline='' evita que se generen líneas en blanco extra entre filas (importante en Windows).
 
 gregar_preguntas
 ¿Qué hace?
@@ -124,3 +137,9 @@ Obtiene los 10 mejores puntajes del ranking.
 Lee el archivo CSV donde están las puntuaciones.
 Ordena los datos de mayor a menor puntuación.
 Retorna los 10 mejores jugadores.
+
+
+--FUNCIONES DE PANTALLA Y ETC
+ENUMERATE: es una función incorporada en Python que se usa para iterar sobre una secuencia (como listas, tuplas o cadenas) y obtener tanto el índice como el valor de cada elemento.
+
+ENUMERATE(ZIP()): Como el enumerate te agrega un indice y te retorna el valor del mismo. Y al zip le tenes que pasar 2 listas/tuplas o más para que te de los valores de esas listas/tuplas a la vez. Si los combinas podes obtener los indices y valores de varias listas al mismo tiempo, y tener un codigo más limpio.
